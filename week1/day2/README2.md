@@ -1,4 +1,3 @@
-
 # Python Fundamentals Training
 
 This repository contains practical implementations and exercises covering core Python concepts, developed during my training.
