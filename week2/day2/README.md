@@ -2,7 +2,7 @@
 
 This project covers the fundamentals of **Probability and Probability Distributions** using Python, NumPy, Matplotlib, and Jupyter Notebook.
 
-The goal of this training is to understand probability concepts and apply them in practical simulations, especially in the context of **Data Science and Machine Learning**.
+The goal of this training is to understand probability concepts and apply them through practical simulations, especially in **Data Science and Machine Learning**.
 
 ---
 
@@ -48,21 +48,15 @@ The probability value is between:
 
 ## Probability Formula
 
-When all outcomes are equally likely:
+Probability = Number of favorable outcomes / Total possible outcomes
 
-\[
-P(A)=\frac{\text{Number of favorable outcomes}}{\text{Total possible outcomes}}
-\]
-
-## Example
+### Example:
 
 Rolling a fair dice:
 
-Probability of getting number 6:
+The probability of getting number 6:
 
-\[
-P(6)=\frac{1}{6}
-\]
+Probability(6) = 1 / 6
 
 ---
 
@@ -74,23 +68,17 @@ The complement rule calculates the probability that an event does not happen.
 
 Formula:
 
-\[
-P(Not\ A)=1-P(A)
-\]
+Probability(Not A) = 1 - Probability(A)
 
-Example:
+### Example:
 
 If:
 
-\[
-P(Pass)=0.8
-\]
+Probability(Pass) = 0.8
 
 Then:
 
-\[
-P(Fail)=1-0.8=0.2
-\]
+Probability(Fail) = 1 - 0.8 = 0.2
 
 ---
 
@@ -100,11 +88,9 @@ The addition rule is used when we want the probability of either event happening
 
 Formula:
 
-\[
-P(A\ or\ B)=P(A)+P(B)-P(A\ and\ B)
-\]
+Probability(A or B) = Probability(A) + Probability(B) - Probability(A and B)
 
-The intersection is subtracted because it is counted twice.
+The intersection is subtracted because overlapping events are counted twice.
 
 ---
 
@@ -114,17 +100,13 @@ The multiplication rule calculates the probability of two events happening toget
 
 For independent events:
 
-\[
-P(A\ and\ B)=P(A)\times P(B)
-\]
+Probability(A and B) = Probability(A) × Probability(B)
 
-Example:
+### Example:
 
-Probability of getting heads twice:
+The probability of getting heads twice in two coin flips:
 
-\[
-0.5 \times 0.5 = 0.25
-\]
+0.5 × 0.5 = 0.25
 
 ---
 
@@ -134,21 +116,23 @@ Conditional probability calculates the probability of an event happening given t
 
 Formula:
 
-\[
-P(A|B)=\frac{P(A\ and\ B)}{P(B)}
-\]
+Probability(A given B) = Probability(A and B) / Probability(B)
 
-## Meaning
+Meaning:
 
 The probability of event A happening when event B is already known to be true.
+
+---
 
 ## Machine Learning Example
 
 Predicting customer churn:
 
-> Given customer features, what is the probability that this customer will leave?
+"Given customer features, what is the probability that this customer will leave?"
 
 This is a conditional probability problem.
+
+Machine Learning models often use conditional probability to make predictions based on available features.
 
 ---
 
@@ -158,29 +142,25 @@ Bayes' theorem updates probability when new evidence becomes available.
 
 Formula:
 
-\[
-P(A|B)=\frac{P(B|A)\times P(A)}{P(B)}
-\]
+Probability(A given B) = (Probability(B given A) × Probability(A)) / Probability(B)
+
+---
 
 ## Components of Bayes' Theorem
 
 ### Prior Probability
 
-The initial belief before observing new evidence.
+The initial belief before seeing new evidence.
 
-\[
-P(A)
-\]
+Prior = Probability(A)
 
 ---
 
 ### Likelihood
 
-The probability of observing evidence if the event is true.
+How likely the evidence is if the event is true.
 
-\[
-P(B|A)
-\]
+Likelihood = Probability(B given A)
 
 ---
 
@@ -188,9 +168,7 @@ P(B|A)
 
 The updated probability after considering new evidence.
 
-\[
-P(A|B)
-\]
+Posterior = Probability(A given B)
 
 ---
 
@@ -211,16 +189,16 @@ A probability distribution describes how likely different values of a variable a
 
 ---
 
-# Normal Distribution (Gaussian)
+# Normal Distribution (Gaussian Distribution)
 
 A symmetric distribution with a bell-shaped curve.
 
-## Characteristics
+## Characteristics:
 
 - Most values are close to the mean.
-- Values become less frequent as they move away from the mean.
+- Values become less common as they move away from the mean.
 
-## Examples
+## Examples:
 
 - Human heights
 - Measurement errors
@@ -232,16 +210,16 @@ A symmetric distribution with a bell-shaped curve.
 
 A distribution that describes the number of successes in a fixed number of yes/no trials.
 
-## Examples
+## Examples:
 
-- Number of heads in 10 coin flips
-- Number of successful predictions
+- Number of heads in 10 coin flips.
+- Number of successful predictions.
 
-## Conditions
+## Conditions:
 
-- Fixed number of trials
-- Only two possible outcomes
-- Same probability for each trial
+- Fixed number of trials.
+- Two possible outcomes.
+- Same probability for each trial.
 
 ---
 
@@ -249,13 +227,13 @@ A distribution that describes the number of successes in a fixed number of yes/n
 
 A distribution where every possible outcome has the same probability.
 
-## Example
+## Example:
 
 Rolling a fair dice:
 
-\[
-P(1)=P(2)=P(3)=...=P(6)
-\]
+Probability(1) = Probability(2) = Probability(3) = ... = Probability(6)
+
+Every result has the same chance.
 
 ---
 
@@ -265,9 +243,9 @@ P(1)=P(2)=P(3)=...=P(6)
 
 ## Objective
 
-Simulate 10,000 coin flips using NumPy and check whether the proportion of heads approaches 0.5.
+Simulate 10,000 coin flips using NumPy and confirm that the proportion of heads approaches 0.5.
 
-## Implementation
+## Code
 
 ```python
 import numpy as np
@@ -284,15 +262,15 @@ probability = heads / 10000
 print(probability)
 ```
 
-## Result Explanation
+## Explanation
 
-The obtained probability should be close to:
+The result should be close to:
 
-\[
 0.5
-\]
 
-This demonstrates the **Law of Large Numbers**, where increasing the number of experiments makes the experimental probability approach the theoretical probability.
+This demonstrates the **Law of Large Numbers**.
+
+As the number of experiments increases, the experimental probability becomes closer to the theoretical probability.
 
 ---
 
@@ -300,15 +278,9 @@ This demonstrates the **Law of Large Numbers**, where increasing the number of e
 
 ## Objective
 
-Generate random values from a normal distribution using:
+Generate random values using NumPy normal distribution and visualize the data using a histogram.
 
-```python
-np.random.normal()
-```
-
-and visualize them using a histogram.
-
-## Implementation
+## Code
 
 ```python
 import numpy as np
@@ -324,11 +296,11 @@ plt.hist(data, bins=30)
 plt.show()
 ```
 
-## Result Explanation
+## Explanation
 
-The histogram should have a bell-shaped curve.
+The histogram should show a bell-shaped curve.
 
-This demonstrates the main characteristics of a normal distribution, where most values are concentrated around the mean.
+This confirms the main characteristics of a normal distribution, where most values are concentrated around the mean.
 
 ---
 
@@ -338,45 +310,45 @@ This demonstrates the main characteristics of a normal distribution, where most 
 
 We have:
 
-- 60 male students
-- 40 female students
-- 30 successful male students
-- 30 unsuccessful male students
+- 60 male students.
+- 40 female students.
+- 30 successful male students.
+- 30 unsuccessful male students.
 
-We calculate:
+We want to calculate:
 
-\[
-P(Pass|Male)
-\]
+Probability(Pass given Male)
+
+---
 
 ## Formula
 
-\[
-P(Pass|Male)=
-\frac{P(Pass \cap Male)}
-{P(Male)}
-\]
+Probability(Pass given Male)
 
-## Implementation
+= Probability(Pass and Male) / Probability(Male)
+
+---
+
+## Python Implementation
 
 ```python
 import numpy as np
 
 stud = np.array(
-    ['male']*60 + ['female']*40
+    ['male'] * 60 + ['female'] * 40
 )
 
 grades = np.array(
-    ['yes']*30 +
-    ['no']*30 +
-    ['yes']*20 +
-    ['no']*20
+    ['yes'] * 30 +
+    ['no'] * 30 +
+    ['yes'] * 20 +
+    ['no'] * 20
 )
-
 
 total = len(stud)
 
-# P(Male)
+# Probability of Male
+
 males = stud == 'male'
 
 male_count = np.sum(males)
@@ -384,7 +356,8 @@ male_count = np.sum(males)
 P_male = male_count / total
 
 
-# P(Pass and Male)
+# Probability of Pass and Male
+
 male_pass = np.sum(
     (stud == 'male') &
     (grades == 'yes')
@@ -393,39 +366,34 @@ male_pass = np.sum(
 P_pass_and_male = male_pass / total
 
 
-# P(Pass | Male)
+# Conditional Probability
 
 result = P_pass_and_male / P_male
 
 print(result)
 ```
 
+---
+
 ## Result
 
-The output is:
+Output:
 
 ```
 0.5
 ```
 
-## Explanation
+Explanation:
 
-The calculation is:
+Probability(Pass given Male)
 
-\[
-P(Pass|Male)
-=
-\frac{30/100}{60/100}
-\]
+= (30 / 100) / (60 / 100)
 
-\[
-=
-\frac{30}{60}
-=
-0.5
-\]
+= 30 / 60
 
-The simulation confirms the manual probability calculation.
+= 0.5
+
+The Python simulation confirms the manual calculation.
 
 ---
 
@@ -436,9 +404,9 @@ Each experiment was documented using Markdown explanations.
 The documentation includes:
 
 - The objective of each experiment.
-- The implemented method.
-- The obtained result.
-- The meaning of the result.
+- The method used.
+- The obtained results.
+- The meaning of each result.
 
 ---
 
@@ -446,17 +414,17 @@ The documentation includes:
 
 Probability is a fundamental concept in Machine Learning.
 
-ML models often output probabilities such as:
+Machine Learning models often output probabilities such as:
 
-- Probability of customer churn.
-- Probability of image classification.
-- Probability of spam emails.
+- Probability that a customer will leave.
+- Probability that an image contains a specific object.
+- Probability that an email is spam.
 
 Probability distributions help in:
 
 - Understanding data behavior.
 - Choosing suitable statistical methods.
-- Building and evaluating ML models.
+- Building better ML models.
 
 ---
 
@@ -464,8 +432,10 @@ Probability distributions help in:
 
 During this training, I learned:
 
-✅ Probability fundamentals  
-✅ Complement, Addition, and Multiplication rules  
+✅ Probability basics  
+✅ Complement Rule  
+✅ Addition Rule  
+✅ Multiplication Rule  
 ✅ Conditional Probability  
 ✅ Bayes' Theorem  
 ✅ Normal Distribution  
